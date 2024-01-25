@@ -1,26 +1,9 @@
-def define_posicoes (dados_de_posicionamento):
-    
-    linha = dados_de_posicionamento["linha"]
-    coluna = dados_de_posicionamento["coluna"]
-    orientacao = dados_de_posicionamento["orientacao"]
-    tamanho = dados_de_posicionamento["tamanho"]
-    
-    posicao = []
+def faz_jogada(tabuleiro , linha , coluna):
 
-    posicao.append([linha,coluna])
+    if tabuleiro[linha][coluna] == 1:
+        tabuleiro[linha][coluna] = "X"
 
-    i = 0
-    if orientacao == "vertical":
-        while i < tamanho-1:
-            linha += 1
-            i += 1
-            posicao.append([linha,coluna])
+    else:
+        tabuleiro[linha][coluna] = "-"
 
-    elif orientacao == "horizontal":
-        while i < tamanho-1:
-            coluna += 1
-            i+= 1
-            posicao.append([linha,coluna])
-
-    return posicao
-    
+    return tabuleiro
